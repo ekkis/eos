@@ -1,4 +1,4 @@
-version: "3"
+version: "3" 
 
 services:
   nodeosd:
@@ -8,11 +8,11 @@ services:
     ports:
       - 8888:8888
       - 9876:9876
-    expose:
+    expose: 
       - "8888"
     volumes:
       - nodeos-data-volume:/opt/eosio/bin/data-dir
-      - ./contracts:/contracts
+      - ./contracts:/contracts/usr
     cap_add:
       - IPC_LOCK
     stop_grace_period: 10m
@@ -25,6 +25,7 @@ services:
       - nodeosd
     volumes:
       - keosd-data-volume:/opt/eosio/bin/data-dir
+      - ./contracts:/contracts/usr
     stop_grace_period: 10m
 
 volumes:
